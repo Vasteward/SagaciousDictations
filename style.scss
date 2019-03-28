@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Arizonia|Josefin+Sans:100,300,400|Poiret+One');
+
+
 $title-font: 'Arizonia', cursive;
 $secondary-font: 'Josefin Sans', sans-serif;
 // $secondary-font: 'Poiret One', cursive;
@@ -5,12 +8,22 @@ $signature: 'Poiret One', cursive;
 
 $spacing: 20px;
 $z-index: -1;
-$blog-title-size: 5vh;
+$blog-title-size: 3.5vw;
 // $height: 100vh;
 
 $background-color: #555;
-$basic-color: #FAEBC1;
-$dark-color: #8E2C37;
+$basic-color: #F9F6F1;
+$dark-color: #85114c;
+$tangential-color: #8E8C10;
+$pop-color: #CB5311;
+$accent-color: #CD8B13;
+$muted-color: #b2a98f;
+
+$t-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
+$t-shadow-nav: 0px 3px 0px $muted-color,
+0px 14px 10px rgba(0,0,0,0.15),
+0px 24px 2px rgba(0,0,0,0.1),
+0px 34px 30px rgba(0,0,0,0.1);
 
 // INSTALL FONTS FROM THE WEB follow the below steps:
 // 1. Go to fontSapce
@@ -94,9 +107,9 @@ $dark-color: #8E2C37;
         format('truetype');
 }
 $title-font: 'rasby';
-$title-font: 'africa_type';
+// $title-font: 'africa_type';
 // $title-font: 'africa_design';
-// $title-font: 'chocolate';
+$blog-font: 'chocolate';
 // $title-font: 'safari';
 
 // box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
@@ -165,12 +178,12 @@ $title-font: 'africa_type';
 
 @mixin text-container(){
     // background: url(./assets/images/background/paper-1074131_1920.jpg);
-    background-color: $basic-color;
+    // background-color: $basic-color;
     @include basic-image();
     padding: $spacing;
     font-family: $secondary-font;
+    font-weight: 100 !important;
     overflow: scroll;
-    width: 80vw;
     margin: 0 auto;
 }
 
@@ -181,7 +194,7 @@ $title-font: 'africa_type';
 }
 
 body{
-    background-color: #8F2E3C;
+    background-color: $dark-color;
 
 
 }
@@ -190,58 +203,59 @@ a{
     color: black;
 }
 .top-container{
-    height: 200px;
+    height: 100vh;
     width: 100%;
-    background-image: url(./assets/images/women/wise_woman.jpg);
+    background-color: $accent-color;
+    // background-image: url(./assets/images/women/wise_woman.jpg);
     @include basic-image();
+    background-color: $accent-color;
+
+    margin: 10px solid rgba(0, 0, 0, 0.3); 
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+    .landing{
+        @include text-container();
+        h1{
+            font-family: $title-font;
+            font-size: 8vw;
+        }
+    }
+
 }
-
-
 header{
-    // padding: 10px 16px;
-    // background-color: #555;
-    // color: #eee;
-    z-index: 2;
     @include box-shadow(0px, 2px, 2px, -1px, #333);
-    h1{
-        font-family: $title-font;
-        width: 100%;
-        height: 100%;
-        // display: block;
-        font-size: 3em;
-        // text-shadow: 5px 5px 10px black;
-        text-align: center;
-    }
-    nav.dropdown:hover .dropdown-content{
-        // color: white;
-        display: block;
-        // text-decoration: none;
-        // background-color: maroon;
-    }
+    // h1{
+    //     font-family: $title-font;
+    //     width: 100%;
+    //     height: 100%;
+    //     // display: block;
+    //     font-size: 3em;
+    //     // text-shadow: 5px 5px 10px black;
+    //     text-align: center;
+    // }
     nav{
-        align-content: center;
+        z-index: 200;
+        font-family: $title-font;
+        font-size: 3em;
+        text-shadow: $t-shadow-nav;
+        background-color: $dark-color;
+        text-align: center;
         font-family: $secondary-font;
-        .dropdown-content {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        ul{
             list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: none;
-            position: absolute;
-            background-color: $background-color;
-            min-width: 160px;
-            padding: 12px 16px;
-            z-index: 1;
-            li:hover{
-                background-color: maroon;
-            }
             li{
-                display: block;
-                padding: $spacing;
-                border-left: solid #eee 2px;
-                a:link, a:visited, a:active{
-                    text-decoration: none;
-                    color: white;
-                }
+                display: inline;
+            }
+            li a{
+                // display: block;
+                // padding: 14px 16px;
+                text-decoration: none;
+                text-transform: uppercase;
             }
         }
     }
@@ -253,8 +267,9 @@ em{
     font-size: 20px;
 }
 main{
+    padding: $spacing;
     .text-container{
-        background-image: url(./assets/images/background/paper-1074131_1920.jpg);
+        // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
         @include basic-image();
         padding: $spacing;
         font-family: $secondary-font;
@@ -265,7 +280,7 @@ main{
             font-size: 2em;
         }
     }
-    background-color: #FAEBC1;
+    background-color: $basic-color;
 }
 
 
@@ -325,28 +340,36 @@ main{
 .signature{
     font-family: $signature;
 }
-p{
-    font-family: $secondary-font;
-    font-weight: 200;
-}
+
 section{
-    // padding: $spacing;
+    padding: $spacing;
     // background-color: $basic-color;
-    background-image: url(./assets/images/background/paper-1074131_1920.jpg);
+    // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
     .blog-title{
-        font-family: $title-font;
+        font-family: $secondary-font;
         font-size: $blog-title-size;
-        background-color: maroon;
-        color: #eee; 
-        width: 100%;
+        // background-color: $tangential-color;
+        color: $accent-color; 
+        text-shadow: $t-shadow;
+        // width: 100%;
         text-align: center;
+        
     }
     .blog-post{
         @include text-container();
+        .box{
+            width: 50%;
+            padding: $spacing;
+            background-color: $tangential-color;
+            h3{
+                // padding: $spacing;
+                background-color: $dark-color;
+                color: $accent-color;
+                text-shadow: $t-shadow;
+            }
+        }
     }
 }
-
-
 
 .text-container{
     @include text-container();
@@ -360,8 +383,9 @@ footer{
     align-items: center;
     align-content: space-between;
     p{
-    font-family: $title-font;
-    color: #eee;
+        // text-transform: uppercase;
+        // font-family: $title-font;
+        color: #eee;
     }
     a{
         @include links(blue, green, purple, yellow);
@@ -374,8 +398,10 @@ footer{
 
 
 @media only screen and (min-width: 768px){
-    * {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
+    * {
+        box-sizing: border-box
+    }
+// body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
 .tab {
