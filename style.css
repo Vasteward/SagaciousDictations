@@ -1,0 +1,288 @@
+@font-face {
+  font-family: 'rasby';
+  src: url("./assets/fonts/rasby/rasby.eot");
+  src: local("Rasby"), url("./assets/fonts/rasby/rasby.ttf") format("truetype"); }
+@font-face {
+  font-family: safari;
+  src: url("./assets/fonts/safari/OutOfAfrica.eot");
+  /* EOT file for IE */
+  src: local("OutofAfrica"), url("./assets/fonts/safari/OutOfAfrica.ttf") format("truetype"); }
+@font-face {
+  font-family: africa_type;
+  src: url("./assets/fonts/africa_typography/afro_type.eot");
+  /* EOT file for IE */
+  src: local("Rasby"), url("./assets/fonts/africa_typography/afro_type.ttf") format("truetype"); }
+@font-face {
+  font-family: africa_design;
+  src: url("./assets/fonts/africanDesign/AfricaDesign.eot");
+  /* EOT file for IE */
+  src: local("Africa-Gold-A-Patterns"), url("./assets/fonts/africanDesign/AfricaDesign.ttf") format("truetype"); }
+@font-face {
+  font-family: african_pattern;
+  src: url("./assets/fonts/africanPattern/AfricanPattern.eot");
+  /* EOT file for IE */
+  src: local("AfricanPattern"), url("./assets/fonts/africanPattern/AfricanPattern.ttf") format("truetype"); }
+@font-face {
+  font-family: chocolate;
+  src: url("./assets/fonts/chocolate/chocolate.eot");
+  /* EOT file for IE */
+  src: local("Painting_With_Chocolate"), url("./assets/fonts/chocolate/chocolate.ttf") format("truetype"); }
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #8F2E3C; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+.top-container {
+  height: 200px;
+  width: 100%;
+  background-image: url(./assets/images/women/wise_woman.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */ }
+
+header {
+  z-index: 2;
+  -webkit-box-shadow: 0px 2px 2px -1px #333;
+  -moz-box-shadow: 0px 2px 2px -1px #333;
+  -ms-box-shadow: 0px 2px 2px -1px #333;
+  -o-box-shadow: 0px 2px 2px -1px #333;
+  box-shadow: 0px 2px 2px -1px #333; }
+  header h1 {
+    font-family: "africa_type";
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+    text-align: center; }
+  header nav.dropdown:hover .dropdown-content {
+    display: block; }
+  header nav {
+    align-content: center;
+    font-family: "Josefin Sans", sans-serif; }
+    header nav .dropdown-content {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+      position: absolute;
+      background-color: #555;
+      min-width: 160px;
+      padding: 12px 16px;
+      z-index: 1; }
+      header nav .dropdown-content li:hover {
+        background-color: maroon; }
+      header nav .dropdown-content li {
+        display: block;
+        padding: 20px;
+        border-left: solid #eee 2px; }
+        header nav .dropdown-content li a:link, header nav .dropdown-content li a:visited, header nav .dropdown-content li a:active {
+          text-decoration: none;
+          color: white; }
+
+em {
+  font-family: "africa_type";
+  font-size: 20px; }
+
+main {
+  background-color: #FAEBC1; }
+  main .text-container {
+    background-image: url(./assets/images/background/paper-1074131_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Center the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    padding: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    overflow: scroll;
+    width: 80vw;
+    margin: 0 auto; }
+    main .text-container p > em {
+      font-size: 2em; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+.sticky + .content {
+  padding-top: 102px; }
+
+.circle {
+  float: right;
+  height: 200px;
+  width: 200px;
+  -webkit-clip-path: circle();
+  -moz-clip-path: circle();
+  -ms-clip-path: circle();
+  -o-clip-path: circle();
+  clip-path: circle();
+  shape-margin: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  -webkit-box-shadow: 5px 5px 5px 10px #333;
+  -moz-box-shadow: 5px 5px 5px 10px #333;
+  -ms-box-shadow: 5px 5px 5px 10px #333;
+  -o-box-shadow: 5px 5px 5px 10px #333;
+  box-shadow: 5px 5px 5px 10px #333; }
+
+#typewriter {
+  background-image: url(./assets/images/patrick-fore-381200-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */ }
+
+#cortez {
+  background-image: url(./assets/images/blog-images/AOC.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  z-index: -1; }
+
+#representative {
+  background-image: url(./assets/images/blog-images/flags/andrew-ruiz-307552-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  z-index: -1; }
+
+#children {
+  background-image: url(./assets/images/blog-images/geronimo-gonzalez-giqueaux-1367646-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  z-index: -1; }
+
+.signature {
+  font-family: "Poiret One", cursive; }
+
+p {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200; }
+
+section {
+  background-image: url(./assets/images/background/paper-1074131_1920.jpg); }
+  section .blog-title {
+    font-family: "africa_type";
+    font-size: 5vh;
+    background-color: maroon;
+    color: #eee;
+    width: 100%;
+    text-align: center; }
+  section .blog-post {
+    background-color: #FAEBC1;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Center the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    padding: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    overflow: scroll;
+    width: 80vw;
+    margin: 0 auto; }
+
+.text-container {
+  background-color: #FAEBC1;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  padding: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  overflow: scroll;
+  width: 80vw;
+  margin: 0 auto; }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between; }
+  footer p {
+    font-family: "africa_type";
+    color: #eee; }
+  footer a a {
+    background-color: blue; }
+    footer a a:visited {
+      background-color: green; }
+    footer a a:hover {
+      background-color: purple; }
+    footer a a:active {
+      background-color: yellow; }
+  footer a .contact-link {
+    height: 50px; }
+
+@media only screen and (min-width: 768px) {
+  * {
+    box-sizing: border-box; }
+
+  body {
+    font-family: "Lato", sans-serif; }
+
+  /* Style the tab */
+  .tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px; }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px; }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd; }
+
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #ccc; }
+
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    display: none; }
+
+  /* Clear floats after the tab */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table; } }
+
+/*# sourceMappingURL=style.css.map */
