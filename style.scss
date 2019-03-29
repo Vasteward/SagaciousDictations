@@ -544,8 +544,8 @@ aside{
             // padding-bottom: 10px;
             padding: $title-bar-spacing;
             background-color: $dark-color;
-            color: black;
-            text-shadow: $t-shadow-nav;
+            color: $basic-color;
+            text-shadow: $t-shadow;
             text-transform: uppercase;
             margin: $spacing 0;
         }
@@ -569,8 +569,8 @@ aside{
             }
         }
         .line-items{
-            list-style-type: circle;
             li{
+                list-style-type: none;
             }
 
         }
