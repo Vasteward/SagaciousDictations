@@ -36,6 +36,10 @@
 .trial > p {
   font-family: "afriga"; }
 
+* {
+  margin: 0;
+  padding: 0; }
+
 /* width */
 ::-webkit-scrollbar {
   width: 7px; }
@@ -53,14 +57,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #b2a98f; }
 
-* {
-  margin: 0;
-  padding: 0; }
+input::-webkit-input-placeholder:hover {
+  color: #F9F6F1 !important; }
 
-body {
-  background-color: #85114c;
-  display: grid;
-  grid-template-areas: "head head head head head head" "nav nav nav nav nav nav" "main main main main main panel" "footer footer footer footer footer footer"; }
+input:-moz-placeholder:hover {
+  /* Firefox 18- */
+  color: #F9F6F1 !important; }
+
+input::-moz-placeholder:hover {
+  /* Firefox 19+ */
+  color: #F9F6F1 !important; }
+
+input:-ms-input-placeholder:hover {
+  color: #F9F6F1 !important; }
 
 img {
   background-repeat: no-repeat;
@@ -78,21 +87,52 @@ em {
 
 input[type=email], input[type=text] {
   outline: none;
-  -webkit-transition: 0.030s;
-  -moz-transition: 0.030s;
-  -ms-transition: 0.030s;
-  -o-transition: 0.030s;
+  -webkit-transition: 0.30s;
+  -moz-transition: 0.30s;
+  -ms-transition: 0.30s;
+  -o-transition: 0.30s;
   box-shadow: 0 0 5px #CB5311;
   border: 1px solid #CB5311;
   z-index: 500; }
 
-input[type=email]:hover, input[type=text]:hover {
+input[type=email]:hover, input[type=text]:hover, input[placeholder="email address"]:hover {
   box-shadow: 0 0 5px black;
   border: 1px solid black;
-  z-index: 500; }
+  z-index: 500;
+  background: #CD8B13;
+  color: white; }
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 20px; }
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  -webkit-transition: 0.30s;
+  -moz-transition: 0.30s;
+  -ms-transition: 0.30s;
+  -o-transition: 0.30s; }
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+.change .bar2 {
+  opacity: 0; }
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px); }
+
+body {
+  background-color: #85114c; }
 
 .top-container {
-  grid-area: head;
+  grid-area: land;
   height: 100vh;
   width: 100%;
   background-color: #CD8B13;
@@ -122,29 +162,51 @@ input[type=email]:hover, input[type=text]:hover {
       font-size: 8vw; }
 
 header {
-  grid-area: nav;
-  -webkit-box-shadow: 0px 2px 2px -1px #333;
-  -moz-box-shadow: 0px 2px 2px -1px #333;
-  -ms-box-shadow: 0px 2px 2px -1px #333;
-  -o-box-shadow: 0px 2px 2px -1px #333;
-  box-shadow: 0px 2px 2px -1px #333; }
+  grid-area: bar;
+  -webkit-box-shadow: 0px 2px 200 px -1px #333;
+  -moz-box-shadow: 0px 2px 200 px -1px #333;
+  -ms-box-shadow: 0px 2px 200 px -1px #333;
+  -o-box-shadow: 0px 2px 200 px -1px #333;
+  box-shadow: 0px 2px 200 px -1px #333; }
   header nav {
-    z-index: 200;
     font-family: "rasby";
     font-size: 3em;
-    text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 14px 2px rgba(0, 0, 0, 0.1), 0px 14px 30px rgba(0, 0, 0, 0.1);
     background-color: #85114c;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     height: 100%;
     padding: 10px; }
     header nav ul {
-      list-style-type: none; }
+      list-style-type: none;
+      display: inline; }
       header nav ul li {
-        display: inline;
-        cursor: wait; }
-        header nav ul li #news:hover {
-          cursor: not-allowed; }
+        display: inline-block;
+        border-radius: 7px; }
+        header nav ul li a:hover {
+          cursor: alias; }
+      header nav ul li:nth-child(odd) {
+        font-size: 30px;
+        vertical-align: 20%; }
+      header nav ul #news:hover {
+        -webkit-transition: 0.30s;
+        -moz-transition: 0.30s;
+        -ms-transition: 0.30s;
+        -o-transition: 0.30s;
+        cursor: not-allowed;
+        background-color: gray; }
+        header nav ul #news:hover a {
+          color: #CD8B13;
+          padding: 5px 5px; }
+      header nav ul li:hover {
+        background-color: #8E8C10; }
+        header nav ul li:hover a {
+          -webkit-transition: 0.30s;
+          -moz-transition: 0.30s;
+          -ms-transition: 0.30s;
+          -o-transition: 0.30s;
+          color: #F9F6F1;
+          padding: 5px 5px; }
       header nav ul li a {
         text-decoration: none;
         text-transform: uppercase; }
@@ -154,57 +216,73 @@ main {
   padding: 20px;
   z-index: -1;
   background-color: #F9F6F1; }
-  main .text-container {
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Center the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    padding: 20px;
-    overflow: scroll;
-    width: 80vw;
-    margin: 0 auto; }
-    main .text-container p > em {
-      font-size: 2em; }
+  main section {
+    padding: 20px; }
+    main section .blog-title {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 40px;
+      color: #CD8B13;
+      text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+      text-align: center; }
+    main section .blog-post {
+      background-repeat: no-repeat;
+      background-position: center;
+      /* Center the image */
+      background-size: cover;
+      /* Resize the background image to cover the entire container */
+      padding: 20px;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 100;
+      margin: 0 auto; }
+      main section .blog-post .box {
+        text-transform: uppercase;
+        padding: 0 20px;
+        background-color: #85114c; }
+        main section .blog-post .box h3 {
+          padding-top: 20px;
+          color: #F9F6F1; }
+        main section .blog-post .box p {
+          padding: 20px; }
+        main section .blog-post .box a {
+          padding: 20px;
+          background-color: #85114c;
+          color: #F9F6F1;
+          text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+          text-align: center;
+          font-weight: 400;
+          margin-top: 20px; }
+        main section .blog-post .box a:hover {
+          -webkit-transition: 0.30s;
+          -moz-transition: 0.30s;
+          -ms-transition: 0.30s;
+          -o-transition: 0.30s;
+          background-color: #8E8C10; }
+      main section .blog-post .box:hover {
+        -webkit-transition: 0.30s;
+        -moz-transition: 0.30s;
+        -ms-transition: 0.30s;
+        -o-transition: 0.30s;
+        color: #F9F6F1;
+        background-color: #CD8B13; }
 
 aside {
+  grid-area: panel;
   padding: 20px;
   font-family: "Josefin Sans", sans-serif;
-  grid-area: panel;
   text-align: center;
-  background-color: #F9F6F1;
-  z-index: -1; }
-  aside #me {
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Center the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    height: 30vw;
-    width: 100%;
-    margin-bottom: 20px; }
+  background-color: #F9F6F1; }
   aside .s-about {
-    margin: 20px; }
-    aside .s-about img {
-      -webkit-box-shadow: 0px 2px 2px -1px #333;
-      -moz-box-shadow: 0px 2px 2px -1px #333;
-      -ms-box-shadow: 0px 2px 2px -1px #333;
-      -o-box-shadow: 0px 2px 2px -1px #333;
-      box-shadow: 0px 2px 2px -1px #333; }
-    aside .s-about .social-media {
-      display: inline-block; }
-      aside .s-about .social-media svg {
-        height: 20px;
-        width: 20px; }
-    aside .s-about .social-media:hover {
-      display: inline-block;
-      -webkit-transition: 0.030s;
-      -moz-transition: 0.030s;
-      -ms-transition: 0.030s;
-      -o-transition: 0.030s; }
-      aside .s-about .social-media:hover svg {
-        height: 30px;
-        width: 30px; }
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px; }
+    aside .s-about .social-media a i {
+      font-size: 48px; }
+    aside .s-about .social-media a i:hover {
+      -webkit-transition: 0.30s;
+      -moz-transition: 0.30s;
+      -ms-transition: 0.30s;
+      -o-transition: 0.30s;
+      color: #85114c; }
   aside .subscribe {
     font-family: "Josefin Sans", sans-serif;
     border: 1px solid black;
@@ -229,17 +307,14 @@ aside {
         color: #85114c;
         text-transform: uppercase;
         padding: 10px 20px;
-        -webkit-transition: 0.030s;
-        -moz-transition: 0.030s;
-        -ms-transition: 0.030s;
-        -o-transition: 0.030s;
+        -webkit-transition: 0.30s;
+        -moz-transition: 0.30s;
+        -ms-transition: 0.30s;
+        -o-transition: 0.30s;
         border: none; }
         aside .subscribe form button:hover {
-          color: #b2a98f;
+          color: #F9F6F1;
           background-color: #CD8B13; }
-      aside .subscribe form button:hover {
-        color: #b2a98f;
-        background-color: #CD8B13; }
   aside .panel-section {
     padding-bottom: 20px; }
     aside .panel-section h3 {
@@ -257,14 +332,14 @@ aside {
       color: #85114c;
       text-transform: uppercase;
       padding: 10px 20px;
-      -webkit-transition: 0.030s;
-      -moz-transition: 0.030s;
-      -ms-transition: 0.030s;
-      -o-transition: 0.030s;
+      -webkit-transition: 0.30s;
+      -moz-transition: 0.30s;
+      -ms-transition: 0.30s;
+      -o-transition: 0.30s;
       border: none;
       padding: 10px 5px; }
       aside .panel-section form button:hover, aside .panel-section form button#small-button:hover {
-        color: #b2a98f;
+        color: #F9F6F1;
         background-color: #CD8B13; }
     aside .panel-section img {
       width: 80%; }
@@ -334,45 +409,16 @@ aside {
   /* Resize the background image to cover the entire container */
   z-index: -1; }
 
-#cortez, #representative, #children, .full {
+#profile-pic {
+  z-index: -1; }
+
+#cortez, #representative, #children, #profile-pic, .full {
   height: 30vw;
   width: 100%;
   margin-bottom: 20px; }
 
 .signature {
   font-family: "Poiret One", cursive; }
-
-section {
-  padding: 20px; }
-  section .blog-title {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 3.5vw;
-    color: #CD8B13;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-    text-align: center; }
-  section .blog-post {
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Center the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    padding: 20px;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    margin: 0 auto; }
-    section .blog-post .box {
-      text-transform: uppercase;
-      padding: 0 20px;
-      background-color: #85114c; }
-      section .blog-post .box h3 {
-        padding: 20px;
-        background-color: #85114c;
-        color: #F9F6F1;
-        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-        text-align: center; }
-    section .blog-post .box:hover {
-      color: #F9F6F1;
-      background-color: #CD8B13; }
 
 .text-container {
   background-repeat: no-repeat;
@@ -396,10 +442,10 @@ footer {
   background-color: #85114c;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  -webkit-transition: 0.030s;
-  -moz-transition: 0.030s;
-  -ms-transition: 0.030s;
-  -o-transition: 0.030s;
+  -webkit-transition: 0.30s;
+  -moz-transition: 0.30s;
+  -ms-transition: 0.30s;
+  -o-transition: 0.30s;
   text-align: center;
   background: url("./assets/images/women/childes_eyes.jpg"); }
   footer .footer-bg {
@@ -430,23 +476,22 @@ footer {
           color: #85114c;
           text-transform: uppercase;
           padding: 10px 20px;
-          -webkit-transition: 0.030s;
-          -moz-transition: 0.030s;
-          -ms-transition: 0.030s;
-          -o-transition: 0.030s;
+          -webkit-transition: 0.30s;
+          -moz-transition: 0.30s;
+          -ms-transition: 0.30s;
+          -o-transition: 0.30s;
           border: none; }
           footer .footer-bg .subscribe form button:hover {
-            color: #b2a98f;
+            color: #F9F6F1;
             background-color: #CD8B13; }
-        footer .footer-bg .subscribe form button:hover {
-          color: #F9F6F1;
-          background-color: #CD8B13; }
-    footer .footer-bg .social-media {
-      display: inline-block;
-      padding: 20px; }
-      footer .footer-bg .social-media svg {
-        height: 50px;
-        width: 50px; }
+    footer .footer-bg .social-media a i {
+      font-size: 48px; }
+    footer .footer-bg .social-media a i:hover {
+      -webkit-transition: 0.30s;
+      -moz-transition: 0.30s;
+      -ms-transition: 0.30s;
+      -o-transition: 0.30s;
+      color: #8E8C10; }
 
 footer:before {
   content: "";
@@ -456,7 +501,6 @@ footer:before {
   bottom: 0;
   left: 0;
   right: 0;
-  background: url(test.jpg) center center;
   opacity: .4; }
 
 @media only screen and (min-width: 768px) {

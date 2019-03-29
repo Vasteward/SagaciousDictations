@@ -45,9 +45,13 @@
 </head>
 <body>
     <div class="top-container">
+        <div class="container" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
         <div class="landing">
             <h1>Blog</h1>
-            <!-- <h1>Dictations</h1> -->
             <p>a diverse audience with diverse ideals and opinions</p>
         </div>
     </div>
@@ -56,7 +60,7 @@
             <ul>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./news.html">News</a></li>
+                <li id="news" onclick="comingSoon()"><a href="https://www.npr.org/">News</a></li>
             </ul>
         </nav>
 
@@ -66,7 +70,7 @@
             <section class="tabcontent" >
                 <h2 class="blog-title" id="reps">Holding Representatives Responsible & Accountable</h2>
                 <!-- <time datetime="2019-27-02">February 27, 2019</time> -->
-                <div class="blog-post">
+                <div class="blog-post text-container" >
                     <p>While watching the Senate hearings today with Michael Cohen on the stand and testifying as to his involvement in the cover-up orchestrated by D. Trump.</p>
                     <br>
                     <p>Michael Cohen has been in the hot seat and under some very tenuous questioning from the entire congressional population in D.C.  This is to corroborate his earlier statements, be in agreement with his testimony at his hearing, and clear his name of Trump’s misbehavior and law breaking.</p>
@@ -136,23 +140,25 @@
         </div>
     </main>
     <footer>
-        <div class="footer-bg">
-            <div class="footer-text">
-                <h3>Sagacious Dictations</h3>
-                <p>the source for proven, researched ideas and thoughts to create change for a better outcome</p>
+            <div class="footer-bg">
+                <div class="footer-text">
+                    <h3>Sagacious Dictations</h3>
+                    <p>the source for proven, researched ideas and thoughts to create change for a better outcome</p>
+                </div>
+                <div class="subscribe">
+                    <form method="POST" action="#">
+                        <input type="email" name="email" placeholder="email address">
+                        <button type="submit" name="action">Subscribe</button>
+                    </form>
+                </div>
+                <div class="social-media">
+                    <!-- can change pixelation or color, just style -->
+                    <!-- 48px seems to be suitable -->
+                    <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmsinvincible.tk%2Fsagaciousdictations
+                        "><i style="font-size:48px;" class="fab">&#xf082;</i></a>
+                    <a href="sms:?&body=Check out this new blog! It's informative and thought provoking. msinvincible.tk/sagaciousdictations"Checkout this site""> <i style="font-size:48px;" class="fa">&#xf1e1;</i></a>  
+                </div>
             </div>
-            <div class="subscribe">
-                <form method="POST" action="#">
-                    <input type="email" name="email" placeholder="email address">
-                    <button type="submit" name="action">Subscribe</button>
-                </form>
-            </div>
-            <div class="social-media">
-                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"></path></svg>
-                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter-square" class="svg-inline--fa fa-twitter-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></path></svg>
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-square" class="svg-inline--fa fa-envelope-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM178.117 262.104C87.429 196.287 88.353 196.121 64 177.167V152c0-13.255 10.745-24 24-24h272c13.255 0 24 10.745 24 24v25.167c-24.371 18.969-23.434 19.124-114.117 84.938-10.5 7.655-31.392 26.12-45.883 25.894-14.503.218-35.367-18.227-45.883-25.895zM384 217.775V360c0 13.255-10.745 24-24 24H88c-13.255 0-24-10.745-24-24V217.775c13.958 10.794 33.329 25.236 95.303 70.214 14.162 10.341 37.975 32.145 64.694 32.01 26.887.134 51.037-22.041 64.72-32.025 61.958-44.965 81.325-59.406 95.283-70.199z"></path></svg>
-            </div>
-        </div>
-    </footer>
+        </footer>
 </body>
 </html>

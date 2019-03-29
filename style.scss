@@ -13,7 +13,7 @@ $spacing: 20px;
 $title-bar-spacing: 10px $spacing;
 
 $z-index: -1;
-$blog-title-size: 3.5vw;
+$blog-title-size: 40px;
 // $height: 100vh;
 
 $background-color: #555;
@@ -24,13 +24,15 @@ $pop-color: #CB5311;
 $accent-color: #CD8B13;
 $muted-color: #b2a98f;
 
+$link-height: 50px;
 
-
+$social-m-font-size: 48px;
+// h-shadow v-shadow blur-radius color|none|initial|inherit;
 $t-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
 $t-shadow-nav:  0px 3px 0px $muted-color,
                 0px 14px 10px rgba(0,0,0,0.15),
-                0px 24px 2px rgba(0,0,0,0.1),
-                0px 34px 30px rgba(0,0,0,0.1);
+                0px 14px 2px rgba(0,0,0,0.1),
+                0px 14px 30px rgba(0,0,0,0.1);
 
 
 // /* ______________________________ INSTALED FONTS ______________________________ */
@@ -147,6 +149,8 @@ $afriga: 'afriga';
 
 // /* ______________________________ MIXINs ______________________________ */
 
+
+
     // /* width */
     // ::-webkit-scrollbar {
     //     width: 20px;
@@ -224,9 +228,8 @@ $afriga: 'afriga';
     shape-outside: circle();
 }
 
-@mixin link(){
-    height: 50px;
-}
+
+
 
 @mixin links($link, $visit, $hover, $active){
     a{
@@ -255,6 +258,9 @@ $afriga: 'afriga';
     margin-bottom: $spacing;
 }
 
+
+
+
 @mixin text-container(){
     // background: url(./assets/images/background/paper-1074131_1920.jpg);
     // background-color: $basic-color;
@@ -266,10 +272,10 @@ $afriga: 'afriga';
 }
 
 @mixin transition(){
-    -webkit-transition: 0.030s;
-    -moz-transition: 0.030s;
-    -ms-transition: 0.030s;
-    -o-transition: 0.030s;
+    -webkit-transition: 0.30s;
+    -moz-transition: 0.30s;
+    -ms-transition: 0.30s;
+    -o-transition: 0.30s;
 }
 
 @mixin push(){
@@ -283,18 +289,15 @@ $afriga: 'afriga';
     @include transition();
     border: none;
     &:hover{
-        color: $muted-color;
+        color: $basic-color;
         background-color: $accent-color;
     }
 }
 
 @mixin social-media-icons($height, $width){
-    display: inline-block;
-    svg{
+        display: inline-block;
         height: $height;
         width: $width;
-    }
-
 }
 
 @mixin subscribe(){
@@ -325,47 +328,56 @@ $afriga: 'afriga';
             @include push();
         }
         button:hover{
-            color: $muted-color;
+            color: $basic-color;
             background-color: $accent-color;
         }
     }
 }
 
-// /* ______________________________ MAIN STYLING ______________________________ */
+// /* ______________________________ SPECIFICS ______________________________ */
 
-    /* width */
-    ::-webkit-scrollbar {
-        width: 7px;
-    }
-    /* Track */
-    ::-webkit-scrollbar-track {
-        // box-shadow: inset 0 0 5px grey; 
-        border-radius: 7px;
-    }
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: $pop-color; 
-        border-radius: 2px;
-    }
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: $muted-color; 
-    }
 *{
     margin: 0;
     padding: 0;
     // border: red dashed 1px;
 }
 
-body{
-    background-color: $dark-color;
-    display: grid;
-    grid-template-areas: 
-        "head head head head head head"
-        "nav nav nav nav nav nav"
-        "main main main main main panel"
-        "footer footer footer footer footer footer";
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
 }
+/* Track */
+::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 5px grey; 
+    border-radius: 7px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $pop-color; 
+    border-radius: 2px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $muted-color; 
+}
+
+    // STYLES THE INPUT TEXT
+input::-webkit-input-placeholder:hover {
+    color: $basic-color !important;
+}
+        
+input:-moz-placeholder:hover { /* Firefox 18- */
+    color: $basic-color !important;  
+}
+        
+input::-moz-placeholder:hover {  /* Firefox 19+ */
+    color: $basic-color !important;  
+}
+        
+input:-ms-input-placeholder:hover {  
+    color: $basic-color !important;  
+}
+
 img{
     @include basic-image();
 }
@@ -384,18 +396,63 @@ input[type=email], input[type=text]{
     border: 1px solid $pop-color;
     z-index: 500;
 }
-input[type=email]:hover, input[type=text]:hover{
+input[type=email]:hover, input[type=text]:hover, input[placeholder="email address"]:hover{
     box-shadow: 0 0 5px black;
     border: 1px solid black;
     z-index: 500;
-
+    background: $accent-color;
+    color: white;
 }
+
+// ICON
+.container {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: $spacing;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    @include transition();
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+
+
 
 // /* ______________________________ STYLING by SECTION ______________________________ */
 
 
+
+body{
+    background-color: $dark-color;
+    .body-container{
+        // display: grid;
+    //     grid-template-areas: 
+    //         "land land land land land land"
+    //         "bar bar bar bar bar bar"
+    //         "main main main main main panel"
+    //         "footer footer footer footer footer footer";
+    }
+}
+
+
 .top-container{
-    grid-area: head;
+    grid-area: land;
     height: 100vh;
     width: 100%;
     background-color: $accent-color;
@@ -415,11 +472,13 @@ input[type=email]:hover, input[type=text]:hover{
             font-size: 8vw;
         }
     }
-
 }
+
+
+
 header{
-    grid-area: nav;
-    @include box-shadow(0px, 2px, 2px, -1px, #333);
+    grid-area: bar;
+    @include box-shadow(0px, 2px, 200 px, -1px, #333);
     // h1{
     //     font-family: $title-font;
     //     width: 100%;
@@ -430,7 +489,7 @@ header{
     //     text-align: center;
     // }
     nav{
-        z-index: 200;
+        // z-index: 200;
         font-family: $title-font;
         font-size: 3em;
         text-shadow: $t-shadow-nav;
@@ -441,12 +500,34 @@ header{
         padding: 10px;
         ul{
             list-style-type: none;
+            display: inline;
             li{
-                display: inline;
-                #news:hover{
-                    cursor: not-allowed;
+                display: inline-block;
+                border-radius: 7px;
+                a:hover{
+                    cursor: alias;
+                }           
+            }
+            li:nth-child(odd){
+                font-size:30px;
+                vertical-align: 20%;
+            }
+            #news:hover{
+                @include transition();
+                cursor: not-allowed;
+                background-color: gray;
+                a{
+                    color: $accent-color;
+                    padding: 5px 5px;
                 }
-                cursor: wait;
+            } 
+            li:hover{
+                background-color: $green-color;
+                a{
+                    @include transition();
+                    color: $basic-color;
+                    padding: 5px 5px;
+                }
             }
             li a{
                 text-decoration: none;
@@ -463,45 +544,98 @@ main{
     grid-area: main;
     padding: $spacing;
     z-index: $z-index;
-
-    .text-container{
-        // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
-        @include basic-image();
+    // .text-container{
+    //     @include basic-image();
+    //     padding: $spacing;
+    //     overflow: scroll;
+    //     width: 80vw;
+    //     margin: 0 auto;
+    //     p > em{
+    //         font-size: 2em;
+    //     }
+    // }
+    background-color: $basic-color;
+    section{
         padding: $spacing;
-        overflow: scroll;
-        width: 80vw;
-        margin: 0 auto;
-        p > em{
-            font-size: 2em;
+        // background-color: $basic-color;
+        // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
+        .blog-title{
+            font-family: $secondary-font;
+            font-size: $blog-title-size;
+            // background-color: $tangential-color;
+            color: $accent-color; 
+            text-shadow: $t-shadow;
+            // width: 100%;s 
+            text-align: center;
+            
+        }
+        .blog-post{
+            @include text-container();
+            .box{
+                // width: 50%;
+                text-transform: uppercase;
+                padding: 0 $spacing;
+                background-color: $dark-color;
+                // h3 and p are regarding the single.html page
+                h3{
+                    padding-top: $spacing;
+                    color: $basic-color;
+                }
+                p{
+                    padding: $spacing;
+                }
+                a{
+                    padding: $spacing;
+                    background-color: $dark-color;
+                    color: $basic-color;
+                    text-shadow: $t-shadow;
+                    text-align: center;
+                    font-weight: 400;
+                    margin-top: $spacing;
+                }
+                a:hover{
+                    @include transition();
+                    background-color: $green-color;
+                }
+            }
+            .box:hover{
+                @include transition();
+                color: $basic-color;
+                background-color: $accent-color;
+        
+            }
         }
     }
-    background-color: $basic-color;
+    
 }
 
+
+
 aside{
+    grid-area: panel;
     padding: $spacing;
     font-family: $secondary-font;
-    grid-area: panel;
     text-align: center;
     background-color: $basic-color;
-    z-index: $z-index;
-
-    #me{        
-        @include basic-image();
-        @include image-spec();
-
-    }
+    // z-index: $z-index;
     .s-about{
+        border: 1px solid black;
+        // display: grid;
+
         margin: $spacing;
-        img{
-            @include box-shadow(0px, 2px, 2px, -1px, #333);
-        }
+        padding: $spacing;
+
         .social-media{
-            @include social-media-icons(20px, 20px);
-        }
-        .social-media:hover{
-            @include social-media-icons(30px,30px);
-            @include transition();
+            a{
+                i{
+                    font-size: $social-m-font-size;
+                }
+                i:hover{
+                    @include transition();
+                    color: $dark-color;
+                }
+
+            }
         }
     }
     .subscribe{
@@ -530,10 +664,6 @@ aside{
                 width: 90%;
                 margin-top: $spacing;
                 @include push();
-            }
-            button:hover{
-                color: $muted-color;
-                background-color: $accent-color;
             }
         }    
     }
@@ -629,53 +759,20 @@ aside{
     z-index: $z-index;
 }
 
-#cortez, #representative, #children, .full{
+#profile-pic{
+    // @include basic-image();
+    // @include box-shadow(0px, 2px, 2px, -1px, #333);
+    z-index: $z-index;
+}
+#cortez, #representative, #children, #profile-pic, .full{
     @include image-spec();
 }
-
-
 
 .signature{
     font-family: $signature;
 }
 
-section{
-    padding: $spacing;
-    // background-color: $basic-color;
-    // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
-    .blog-title{
-        font-family: $secondary-font;
-        font-size: $blog-title-size;
-        // background-color: $tangential-color;
-        color: $accent-color; 
-        text-shadow: $t-shadow;
-        // width: 100%;
-        text-align: center;
-        
-    }
-    .blog-post{
-        @include text-container();
-        .box{
-            // width: 50%;
-            text-transform: uppercase;
-            padding: 0 $spacing;
-            background-color: $dark-color;
-            h3{
-                padding: $spacing;
-                background-color: $dark-color;
-                color: $basic-color;
-                text-shadow: $t-shadow;
-                text-align: center;
-            }
-        }
-        .box:hover{
-            color: $basic-color;
-            background-color: $accent-color;
-    
-        }
-    }
-}
-
+//important for the about section
 .text-container{
     @include text-container();
 }
@@ -694,7 +791,7 @@ footer{
     background:url("./assets/images/women/childes_eyes.jpg");
     .footer-bg{
         padding: $spacing 0;
-        background: rgba(134,17,76, 0.8);
+        background: rgba(134,17,76, 0.8);//don't alter, included opacity
         .footer-text{
             opacity: 1;
             z-index: 20;
@@ -721,21 +818,25 @@ footer{
                 button{
                     @include push();
                 }
-                button:hover{
-                    color: $basic-color;
-                    background-color: $accent-color;
-                }
             }
         }
         .social-media{
-            @include social-media-icons(50px, 50px);
-            padding: $spacing;
+            a{
+                i{
+                    font-size: $social-m-font-size;
+                }
+                i:hover{
+                    @include transition();
+                    color: $green-color;
+                }
+
+            }
         }
+        
     }
 }
 
 footer:before{
-    // .myDiv:before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -743,9 +844,7 @@ footer:before{
         bottom: 0;
         left: 0;
         right: 0;
-        background: url(test.jpg) center center;
         opacity: .4;
-    // }
 }
 
 @media only screen and (min-width: 768px){
