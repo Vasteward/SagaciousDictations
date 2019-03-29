@@ -215,6 +215,7 @@ main {
   grid-area: main;
   padding: 20px;
   z-index: -1;
+  display: inline-block;
   background-color: #F9F6F1; }
   main section {
     padding: 20px; }
@@ -265,7 +266,15 @@ main {
         color: #F9F6F1;
         background-color: #CD8B13; }
 
+.content-container {
+  background-color: #F9F6F1;
+  width: 100%;
+  padding: 0; }
+
 aside {
+  float: right;
+  vertical-align: top;
+  display: inline-block;
   grid-area: panel;
   padding: 20px;
   font-family: "Josefin Sans", sans-serif;
@@ -410,7 +419,7 @@ aside {
   z-index: -1; }
 
 #profile-pic {
-  z-index: -1; }
+  z-index: -100; }
 
 #cortez, #representative, #children, #profile-pic, .full {
   height: 30vw;
@@ -506,6 +515,102 @@ footer:before {
 @media only screen and (min-width: 768px) {
   * {
     box-sizing: border-box; } }
+@media only screen and (min-width: 750px) {
+  .col-1 {
+    width: 3.125%; }
+
+  .col-2 {
+    width: 6.25%; }
+
+  .col-3 {
+    width: 9.375%; }
+
+  .col-4 {
+    width: 12.5%; }
+
+  .col-5 {
+    width: 15.625%; }
+
+  .col-6 {
+    width: 18.75%; }
+
+  .col-7 {
+    width: 21.875%; }
+
+  .col-8 {
+    width: 25%; }
+
+  .col-9 {
+    width: 28.125%; }
+
+  .col-10 {
+    width: 31.25%; }
+
+  .col-11 {
+    width: 34.375%; }
+
+  .col-12 {
+    width: 37.5%; }
+
+  .col-13 {
+    width: 40.625%; }
+
+  .col-14 {
+    width: 43.75%; }
+
+  .col-15 {
+    width: 46.875%; }
+
+  .col-16 {
+    width: 50%; }
+
+  .col-17 {
+    width: 53.125%; }
+
+  .col-18 {
+    width: 56.25%; }
+
+  .col-19 {
+    width: 59.375%; }
+
+  .col-20 {
+    width: 62.5%; }
+
+  .col-21 {
+    width: 65.625%; }
+
+  .col-22 {
+    width: 68.75%; }
+
+  .col-23 {
+    width: 71.875%; }
+
+  .col-24 {
+    width: 75%; }
+
+  .col-25 {
+    width: 78.125%; }
+
+  .col-26 {
+    width: 81.25%; }
+
+  .col-27 {
+    width: 84.375%; }
+
+  .col-28 {
+    width: 87.5%; }
+
+  .col-29 {
+    width: 90.625%; }
+
+  .col-30 {
+    width: 93.75%; }
+
+  .col-31 {
+    width: 96.875%; }
+
+  .col-32 {
+    width: 100%; } }
 @media only screen and (max-width: 600px) {
   body {
     display: inline-block;

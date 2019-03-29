@@ -74,8 +74,6 @@
 </head>
 <body>
     <div class="body-container">
-
-        
         <div class="top-container">
             <div class="container" onclick="myFunction(this)">
                 <div class="bar1"></div>
@@ -100,125 +98,126 @@
                     <li id="news" onclick="comingSoon()"><a href="https://www.npr.org/">News</a></li>
                 </ul>
             </nav>
-
         </header>
-        <aside>
-            <!-- Tried to get the african patterns to work-no avail -->
-            <!-- <div class="trial">
-                <p>qwertyuiop[]\</p>
-                <p>asdfghjkl;'</p>
-                <p>zxcvbnm,./</p>
-                <p>`1234567890-=</p>
-                <p>~!@#$%^*&()_+{}|:"<>?</p>
-                <p>&#33;</p>
-                <p>&Amacr;</p>
-                <p>&#82;</p>
-                <p>KLM</p>
-            </div> -->
-            <div class="s-about">
-                <img id="profile-pic" class="circle" src="./assets/images/women/tree.jpg" alt="wisdom">
-                <p class="name">Gloria Rankin</p>
-                <br>
-                <p>An erudite educator, counselor, and activist concerned about the current state of America. We cannot look at the topics around us in isolation. Everything is interdependent. I'm interested in providing a platform where educated individuals can coalesce and share their opinions so together we can make the connections.
-                </p>
-                <div class="social-media">
-                    <!-- can change pixelation or color, just style -->
-                    <!-- 48px seems to be suitable -->
-                    <a href="https://www.facebook.com/gloriarankin99"><i class="fab "style="font-size:48px;">&#xf082;</i></a>
+        <div class="content-container">
+            <aside class="col-8">
+                <!-- Tried to get the african patterns to work-no avail -->
+                <!-- <div class="trial">
+                    <p>qwertyuiop[]\</p>
+                    <p>asdfghjkl;'</p>
+                    <p>zxcvbnm,./</p>
+                    <p>`1234567890-=</p>
+                    <p>~!@#$%^*&()_+{}|:"<>?</p>
+                    <p>&#33;</p>
+                    <p>&Amacr;</p>
+                    <p>&#82;</p>
+                    <p>KLM</p>
+                </div> -->
+                <div class="s-about">
+                    <img id="profile-pic" class="circle" src="./assets/images/women/tree.jpg" alt="wisdom">
+                    <p class="name">Gloria Rankin</p>
+                    <br>
+                    <p>An erudite educator, counselor, and activist concerned about the current state of America. We cannot look at the topics around us in isolation. Everything is interdependent. I'm interested in providing a platform where educated individuals can coalesce and share their opinions so together we can make the connections.
+                    </p>
+                    <div class="social-media">
+                        <!-- can change pixelation or color, just style -->
+                        <!-- 48px seems to be suitable -->
+                        <a href="https://www.facebook.com/gloriarankin99"><i class="fab "style="font-size:48px;">&#xf082;</i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="subscribe">
-                <h3>Stay Updated</h3>
-                <form method="POST" action="#">
-                    <input type="email" name="email" placeholder="email address">
-                    <button type="submit" name="action">Subscribe
-                            </button>
+                <div class="subscribe">
+                    <h3>Stay Updated</h3>
+                    <form method="POST" action="#">
+                        <input type="email" name="email" placeholder="email address">
+                        <button type="submit" name="action">Subscribe
+                                </button>
+                        </form>
+                </div>
+                <!-- <a href="#">Click me</a> -->
+                <div class="panel-section">
+                    <h3>Search</h3>
+                    <form action="#" method="GET">
+                        <input type="text" placeholder="Type in a keyword">
+                        <button id="small-button" type="submit">GO</button>
                     </form>
-            </div>
-            <!-- <a href="#">Click me</a> -->
-            <div class="panel-section">
-                <h3>Search</h3>
-                <form action="#" method="GET">
-                    <input type="text" placeholder="Type in a keyword">
-                    <button id="small-button" type="submit">GO</button>
-                </form>
-            </div>
-            <div class="panel-section">
-                <h3>Topics</h3>
-                <ul class="no-bullets">
-                    <li>Politics</li>
-                    <li>Education</li>
-                </ul>
-            </div>
-            <div class="panel-section">
-                <h3>Popular Posts</h3>
-                <img src="./assets/images/patrick-fore-381200-unsplash.jpg" alt="">
-                <p>Title of Post</p>
-            </div>
-            <div class="panel-section">
-                <h3>Archived Posts</h3>
-                <ul class="line-items">
-                    <li>2018 (4)
-                        <ul>
-                            <li>December</li>
+                </div>
+                <div class="panel-section">
+                    <h3>Topics</h3>
+                    <ul class="no-bullets">
+                        <li>Politics</li>
+                        <li>Education</li>
+                    </ul>
+                </div>
+                <div class="panel-section">
+                    <h3>Popular Posts</h3>
+                    <img src="./assets/images/patrick-fore-381200-unsplash.jpg" alt="">
+                    <p>Title of Post</p>
+                </div>
+                <div class="panel-section">
+                    <h3>Archived Posts</h3>
+                    <ul class="line-items">
+                        <li>2018 (4)
                             <ul>
-                                <li>Blog Post title</li>
-                                <li>Blog Post title</li>
-                                <li>Blog Post title</li>
-                                <li>Blog Post title</li>
-                                <li>Blog Post title</li>
+                                <li>December</li>
+                                <ul>
+                                    <li>Blog Post title</li>
+                                    <li>Blog Post title</li>
+                                    <li>Blog Post title</li>
+                                    <li>Blog Post title</li>
+                                    <li>Blog Post title</li>
+                                </ul>
                             </ul>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <main>
-            <div id="post-box">
-                <section class="tabcontent">
-                    <h2 class="blog-title" id="reps">Holding Representatives Responsible & Accountable</h2>
-                    <!-- <time datetime="2019-27-02">February 27, 2019</time> -->
-                    <div class="blog-post">
-                        <p>While watching the Senate hearings today with Michael Cohen on the stand and testifying as to his involvement in the cover-up orchestrated by D. Trump.</p>
-                        <br>
-                        <p>Michael Cohen has been in the hot seat and under some very tenuous questioning from the entire congressional population in D.C.  This is to corroborate his earlier statements, be in agreement with his testimony at his hearing, and clear his name of Trump’s misbehavior and law breaking.</p>
-                        <br>
-                        <div class="full" id="representative"></div>
-
-                        <div class="box">
-                            <a href="./single.html">Full Article</a>
-                        </div>
-                    </div>
-                </section>
-                <section class="tabcontent">
-                    <h2 class="blog-title" id="school">Our School and Our Children
-                        <p><em>"Correctional Inspiration"</em></p>
-                    </h2>                
-                    <div class="blog-post">
-                        <p>	When we enter the educational system, we expect to exit after being thoroughly prepared to conquer the world.  We have before us at least twelve years of reading, grammar, mathematics, science, writing, social studies, geography, social etiquette (that is, how to get along with each other).</p>
-                        <br>
-                        <p>	Now, the problem with this is the subjects and the curriculum are not addressing the institution of learning that is currently in effect.  Why?  Do we really know why and how do we fix it?</p>
-                        <br>
-                        <div class="full" id="children"></div>
-                        <div class="box">
-                            <a href="./single.html">Full Article</a>
-                        </div>
-                    </div>
-                </section>
-                <section class="tabcontent">
-                        <h2 class="blog-title" id="aoc">Alexandria Ocasio-Cortez</h2>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-20">
+                <div id="post-box">
+                    <section class="tabcontent">
+                        <h2 class="blog-title" id="reps">Holding Representatives Responsible & Accountable</h2>
+                        <!-- <time datetime="2019-27-02">February 27, 2019</time> -->
                         <div class="blog-post">
-                            <p>I am totally impressed with AOC.  However, she is pushing the envelope at a rate that may result in burnout on her part.</p>
+                            <p>While watching the Senate hearings today with Michael Cohen on the stand and testifying as to his involvement in the cover-up orchestrated by D. Trump.</p>
                             <br>
-                        <div class="full" id="cortez"></div>
-                        <div class="box">
+                            <p>Michael Cohen has been in the hot seat and under some very tenuous questioning from the entire congressional population in D.C.  This is to corroborate his earlier statements, be in agreement with his testimony at his hearing, and clear his name of Trump’s misbehavior and law breaking.</p>
+                            <br>
+                            <div class="full" id="representative"></div>
 
-                            <a href="./single.html">Full Article</a>
+                            <div class="box">
+                                <a href="./single.html">Full Article</a>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </main>    
+                    </section>
+                    <section class="tabcontent">
+                        <h2 class="blog-title" id="school">Our School and Our Children
+                            <p><em>"Correctional Inspiration"</em></p>
+                        </h2>                
+                        <div class="blog-post">
+                            <p>	When we enter the educational system, we expect to exit after being thoroughly prepared to conquer the world.  We have before us at least twelve years of reading, grammar, mathematics, science, writing, social studies, geography, social etiquette (that is, how to get along with each other).</p>
+                            <br>
+                            <p>	Now, the problem with this is the subjects and the curriculum are not addressing the institution of learning that is currently in effect.  Why?  Do we really know why and how do we fix it?</p>
+                            <br>
+                            <div class="full" id="children"></div>
+                            <div class="box">
+                                <a href="./single.html">Full Article</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="tabcontent">
+                            <h2 class="blog-title" id="aoc">Alexandria Ocasio-Cortez</h2>
+                            <div class="blog-post">
+                                <p>I am totally impressed with AOC.  However, she is pushing the envelope at a rate that may result in burnout on her part.</p>
+                                <br>
+                            <div class="full" id="cortez"></div>
+                            <div class="box">
+
+                                <a href="./single.html">Full Article</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>   
+        </div> 
         <footer>
             <div class="footer-bg">
                 <div class="footer-text">

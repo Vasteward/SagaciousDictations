@@ -544,6 +544,8 @@ main{
     grid-area: main;
     padding: $spacing;
     z-index: $z-index;
+    display: inline-block;
+
     // .text-container{
     //     @include basic-image();
     //     padding: $spacing;
@@ -609,9 +611,16 @@ main{
     
 }
 
-
+.content-container{
+    background-color: $basic-color;
+    width: 100%;
+    padding: 0;
+}
 
 aside{
+    float: right;
+    vertical-align: top;
+    display: inline-block;
     grid-area: panel;
     padding: $spacing;
     font-family: $secondary-font;
@@ -762,7 +771,7 @@ aside{
 #profile-pic{
     // @include basic-image();
     // @include box-shadow(0px, 2px, 2px, -1px, #333);
-    z-index: $z-index;
+    z-index: -100;
 }
 #cortez, #representative, #children, #profile-pic, .full{
     @include image-spec();
@@ -776,6 +785,7 @@ aside{
 .text-container{
     @include text-container();
 }
+
 
 
 footer{
@@ -906,7 +916,13 @@ footer:before{
     
 }
 
-
+@media only screen and (min-width: 750px) {
+    @for $i from 1 through 32 {
+        .col-#{$i} { 
+            width: 100%/32 * $i; 
+        }
+    }
+} 
 
 @media only screen and (max-width: 600px) {
     body{
@@ -930,6 +946,7 @@ footer:before{
             grid-area: main;
         }
         aside{
+            
             grid-area: ancillary;
             .panel-section, .subscribe{
                 display: none;
