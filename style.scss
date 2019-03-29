@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Arizonia|Josefin+Sans:100,300,400|Poiret+One');
 
 
+// /* ______________________________ VARIABLES ______________________________ */
+
+
 $title-font: 'Arizonia', cursive;
 $secondary-font: 'Josefin Sans', sans-serif;
 // $secondary-font: 'Poiret One', cursive;
 $signature: 'Poiret One', cursive;
 
 $spacing: 20px;
+$title-bar-spacing: 10px $spacing;
+
 $z-index: -1;
 $blog-title-size: 3.5vw;
 // $height: 100vh;
@@ -14,16 +19,21 @@ $blog-title-size: 3.5vw;
 $background-color: #555;
 $basic-color: #F9F6F1;
 $dark-color: #85114c;
-$tangential-color: #8E8C10;
+$green-color: #8E8C10;
 $pop-color: #CB5311;
 $accent-color: #CD8B13;
 $muted-color: #b2a98f;
 
+
+
 $t-shadow: 2px 4px 3px rgba(0,0,0,0.3);;
-$t-shadow-nav: 0px 3px 0px $muted-color,
-0px 14px 10px rgba(0,0,0,0.15),
-0px 24px 2px rgba(0,0,0,0.1),
-0px 34px 30px rgba(0,0,0,0.1);
+$t-shadow-nav:  0px 3px 0px $muted-color,
+                0px 14px 10px rgba(0,0,0,0.15),
+                0px 24px 2px rgba(0,0,0,0.1),
+                0px 34px 30px rgba(0,0,0,0.1);
+
+
+// /* ______________________________ INSTALED FONTS ______________________________ */
 
 // INSTALL FONTS FROM THE WEB follow the below steps:
 // 1. Go to fontSapce
@@ -71,14 +81,14 @@ $t-shadow-nav: 0px 3px 0px $muted-color,
         format('truetype');
 }
 @font-face {
-    font-family: africa_design; //Afrika Gold A Patterns by Fonts of Africka
+    font-family: african_design; //Afrika Gold A Patterns by Fonts of Africka
     src: 
         //request for the browser to check for a local copy of fthe fon in case the user already has it
         url('./assets/fonts/africanDesign/AfricaDesign.eot'); /* EOT file for IE */
     src: 
         //request for the browser to check for a local copy of fthe fon in case the user already has it
         local('Africa-Gold-A-Patterns'),
-        url('./assets/fonts/africanDesign/AfricaDesign.ttf')
+        url('./assets/fonts/africanDesign/AfricaDesign.ttf') /* EOT file for Chrome */
         //extend the section to include an indicator of the font file type to make the font more reliable
         format('truetype');
 }
@@ -106,11 +116,74 @@ $t-shadow-nav: 0px 3px 0px $muted-color,
         //extend the section to include an indicator of the font file type to make the font more reliable
         format('truetype');
 }
+
+@font-face {
+    font-family: afriga; //Painting with Chocolate by Mooze from Abstract Font
+    src: 
+        //request for the browser to check for a local copy of fthe fon in case the user already has it
+        url('./assets/fonts/afriga/AFRIGA_.eot'); /* EOT file for IE */
+    src: 
+        //request for the browser to check for a local copy of fthe fon in case the user already has it
+        local('Afrika Gold A Patterns Regular'),
+        url('./assets/fonts/afriga/AFRIGA_.ttf')
+        //extend the section to include an indicator of the font file type to make the font more reliable
+        format('truetype');
+}
 $title-font: 'rasby';
 // $title-font: 'africa_type';
 // $title-font: 'africa_design';
-$blog-font: 'chocolate';
+$safari: 'safari';
 // $title-font: 'safari';
+
+$african-pattern: 'africa_pattern';
+$african-design: 'african_design';
+$afriga: 'afriga';
+
+.trial > p{
+    font-family: $afriga;
+}
+
+
+
+// /* ______________________________ MIXINs ______________________________ */
+
+    // /* width */
+    // ::-webkit-scrollbar {
+    //     width: 20px;
+    // }
+    // /* Track */
+    // ::-webkit-scrollbar-track {
+    //     box-shadow: inset 0 0 5px grey; 
+    //     border-radius: 10px;
+    // }
+    // /* Handle */
+    // ::-webkit-scrollbar-thumb {
+    //     background: red; 
+    //     border-radius: 10px;
+    // }
+    // /* Handle on hover */
+    // ::-webkit-scrollbar-thumb:hover {
+    //     background: #b30000; 
+    // }
+
+
+
+// // @mixin scrollbar(){
+    // ::-webkit-scrollbar ::-moz-scrollbar ::-ms-scrollbar ::-o-scrollbar{
+    //     width: 20px;
+    // }
+    // ::-webkit-scrollbar-track ::-moz-scrollbar-track ::-ms-scrollbar-track ::-o-scrollbar-track{
+    //     box-shadow: inset 0 0 5px grey; 
+    //     border-radius: 10px;
+    // }
+    // ::-webkit-scrollbar-thumb ::-moz-scrollbar-thumb ::-ms-scrollbar-thumb ::-o-scrollbar-thumb{
+    //     background: red; 
+    //     border-radius: 10px;
+    // }
+    // ::-webkit-scrollbar-thumb:hover ::-moz-scrollbar-thumb:hover ::-ms-scrollbar-thumb:hover ::-o-scrollbar-thumb:hover{
+    //     background: #b30000; 
+    // }
+// //   }
 
 // box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
 @mixin box-shadow($horiz: 20px, $vert: 20px, $blur: 20px, $spread: 10px, $color: #eee){
@@ -176,33 +249,153 @@ $blog-font: 'chocolate';
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+@mixin image-spec(){
+    height: 30vw;
+    width: 100%;
+    margin-bottom: $spacing;
+}
+
 @mixin text-container(){
     // background: url(./assets/images/background/paper-1074131_1920.jpg);
     // background-color: $basic-color;
     @include basic-image();
     padding: $spacing;
     font-family: $secondary-font;
-    font-weight: 100 !important;
-    overflow: scroll;
+    font-weight: 100;
     margin: 0 auto;
 }
 
+@mixin transition(){
+    -webkit-transition: 0.030s;
+    -moz-transition: 0.030s;
+    -ms-transition: 0.030s;
+    -o-transition: 0.030s;
+}
 
+@mixin push(){
+    // display: block;
+    font-weight: bolder;
+    background-color: $muted-color;
+    color: $dark-color;
+    // text-shadow: $t-shadow;
+    text-transform: uppercase;
+    padding: $title-bar-spacing;
+    @include transition();
+    border: none;
+    &:hover{
+        color: $muted-color;
+        background-color: $accent-color;
+    }
+}
+
+@mixin social-media-icons($height, $width){
+    display: inline-block;
+    svg{
+        height: $height;
+        width: $width;
+    }
+
+}
+
+@mixin subscribe(){
+    font-family: $secondary-font;
+    border: 1px solid black;
+    padding: 20px 0 20px 0;
+    display: grid;
+    grid-template-areas:
+        "prompt"
+        "subscribe";
+    justify-content: center;
+    width: 100%;
+    grid-row-gap: 10px; 
+    text-transform: uppercase;
+    h3{
+        // width:
+        grid-area: prompt;
+    }
+    form{
+        grid-area: subscribe;
+        input{
+            padding: $title-bar-spacing;
+        }
+        button{
+            // display: block;
+            width: 90%;
+            margin-top: $spacing;
+            @include push();
+        }
+        button:hover{
+            color: $muted-color;
+            background-color: $accent-color;
+        }
+    }
+}
+
+// /* ______________________________ MAIN STYLING ______________________________ */
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        // box-shadow: inset 0 0 5px grey; 
+        border-radius: 7px;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $pop-color; 
+        border-radius: 2px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $muted-color; 
+    }
 *{
     margin: 0;
     padding: 0;
+    // border: red dashed 1px;
 }
 
 body{
     background-color: $dark-color;
-
-
+    display: grid;
+    grid-template-areas: 
+        "head head head head head head"
+        "nav nav nav nav nav nav"
+        "main main main main main panel"
+        "footer footer footer footer footer footer";
+}
+img{
+    @include basic-image();
 }
 a{
     text-decoration: none;
     color: black;
 }
+em{
+    font-size: 20px;
+}
+
+input[type=email], input[type=text]{
+    outline: none;
+    @include transition();
+    box-shadow: 0 0 5px $pop-color;
+    border: 1px solid $pop-color;
+    z-index: 500;
+}
+input[type=email]:hover, input[type=text]:hover{
+    box-shadow: 0 0 5px black;
+    border: 1px solid black;
+    z-index: 500;
+
+}
+
+// /* ______________________________ STYLING by SECTION ______________________________ */
+
+
 .top-container{
+    grid-area: head;
     height: 100vh;
     width: 100%;
     background-color: $accent-color;
@@ -218,13 +411,14 @@ a{
     .landing{
         @include text-container();
         h1{
-            font-family: $title-font;
+            font-family: $secondary-font;
             font-size: 8vw;
         }
     }
 
 }
 header{
+    grid-area: nav;
     @include box-shadow(0px, 2px, 2px, -1px, #333);
     // h1{
     //     font-family: $title-font;
@@ -244,16 +438,17 @@ header{
         text-align: center;
         font-family: $secondary-font;
         height: 100%;
-        width: 100%;
         padding: 10px;
         ul{
             list-style-type: none;
             li{
                 display: inline;
+                #news:hover{
+                    cursor: not-allowed;
+                }
+                cursor: wait;
             }
             li a{
-                // display: block;
-                // padding: 14px 16px;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -262,17 +457,17 @@ header{
 }
 
 
-em{
-    font-family: $title-font;
-    font-size: 20px;
-}
+
+
 main{
+    grid-area: main;
     padding: $spacing;
+    z-index: $z-index;
+
     .text-container{
         // background-image: url(./assets/images/background/paper-1074131_1920.jpg);
         @include basic-image();
         padding: $spacing;
-        font-family: $secondary-font;
         overflow: scroll;
         width: 80vw;
         margin: 0 auto;
@@ -283,7 +478,104 @@ main{
     background-color: $basic-color;
 }
 
+aside{
+    padding: $spacing;
+    font-family: $secondary-font;
+    grid-area: panel;
+    text-align: center;
+    background-color: $basic-color;
+    z-index: $z-index;
 
+    #me{        
+        @include basic-image();
+        @include image-spec();
+
+    }
+    .s-about{
+        margin: $spacing;
+        img{
+            @include box-shadow(0px, 2px, 2px, -1px, #333);
+        }
+        .social-media{
+            @include social-media-icons(20px, 20px);
+        }
+        .social-media:hover{
+            @include social-media-icons(30px,30px);
+            @include transition();
+        }
+    }
+    .subscribe{
+        font-family: $secondary-font;
+        border: 1px solid black;
+        padding: 20px 0 20px 0;
+        display: grid;
+        grid-template-areas:
+            "prompt"
+            "subscribe";
+        justify-content: center;
+        width: 100%;
+        grid-row-gap: 10px; 
+        text-transform: uppercase;
+        h3{
+            // width:
+            grid-area: prompt;
+        }
+        form{
+            grid-area: subscribe;
+            input{
+                padding: $title-bar-spacing;
+            }
+            button{
+                // display: block;
+                width: 90%;
+                margin-top: $spacing;
+                @include push();
+            }
+            button:hover{
+                color: $muted-color;
+                background-color: $accent-color;
+            }
+        }    
+    }
+    .panel-section{
+        padding-bottom: $spacing;
+        h3{
+            // padding-top: 10px;
+            // padding-bottom: 10px;
+            padding: $title-bar-spacing;
+            background-color: $dark-color;
+            color: black;
+            text-shadow: $t-shadow-nav;
+            text-transform: uppercase;
+            margin: $spacing 0;
+        }
+        form{
+            // text-align: center;
+            input{
+                padding: $title-bar-spacing;
+            }
+            button, button#small-button{
+                @include push();
+                padding: 10px 5px;
+            }
+        }
+        img{
+            width: 80%;
+        }
+        .no-bullets{
+            list-style-type: none;
+            li:hover{
+                color: $pop-color;
+            }
+        }
+        .line-items{
+            list-style-type: circle;
+            li{
+            }
+
+        }
+    }
+}
 // /* ______________________________ STICKY ______________________________ */
 
 
@@ -310,7 +602,6 @@ main{
     shape-margin: 1rem;
     @include basic-image();
     @include box-shadow(5px, 5px, 5px, 10px, #333);
-
     // @include box-shadow(20px, 20px, 50px, grey);
 }
 
@@ -318,7 +609,7 @@ main{
 
 #typewriter{
     background-image: url(./assets/images/patrick-fore-381200-unsplash.jpg);
-    @include basic-image();
+    // @include basic-image();
 }
 
 #cortez{
@@ -330,12 +621,19 @@ main{
     background-image: url(./assets/images/blog-images/flags/andrew-ruiz-307552-unsplash.jpg);
     @include basic-image();
     z-index: $z-index;
+
 }
 #children{
     background-image: url(./assets/images/blog-images/geronimo-gonzalez-giqueaux-1367646-unsplash.jpg);
     @include basic-image();
     z-index: $z-index;
 }
+
+#cortez, #representative, #children, .full{
+    @include image-spec();
+}
+
+
 
 .signature{
     font-family: $signature;
@@ -358,15 +656,22 @@ section{
     .blog-post{
         @include text-container();
         .box{
-            width: 50%;
-            padding: $spacing;
-            background-color: $tangential-color;
+            // width: 50%;
+            text-transform: uppercase;
+            padding: 0 $spacing;
+            background-color: $dark-color;
             h3{
-                // padding: $spacing;
+                padding: $spacing;
                 background-color: $dark-color;
-                color: $accent-color;
+                color: $basic-color;
                 text-shadow: $t-shadow;
+                text-align: center;
             }
+        }
+        .box:hover{
+            color: $basic-color;
+            background-color: $accent-color;
+    
         }
     }
 }
@@ -377,81 +682,175 @@ section{
 
 
 footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // @include image-spec();
+    @include basic-image();
+    grid-area: footer;
     align-items: center;
-    align-content: space-between;
-    p{
-        // text-transform: uppercase;
-        // font-family: $title-font;
-        color: #eee;
-    }
-    a{
-        @include links(blue, green, purple, yellow);
-        .contact-link{
-            @include link();
-        
+    background-color: $dark-color;
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    @include transition();
+    text-align: center;
+    background:url("./assets/images/women/childes_eyes.jpg");
+    .footer-bg{
+        padding: $spacing 0;
+        background: rgba(134,17,76, 0.8);
+        .footer-text{
+            opacity: 1;
+            z-index: 20;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: $spacing;
+            h3{
+                font-size:70px;
+            }
+            p{
+                color: #eee;
+                font-size:20px;
+                text-align: left;
+            }
+        }
+        .subscribe{
+            padding: $spacing;
+            form{
+                padding: 0px;
+                input{
+                    padding: $title-bar-spacing;
+                    border: none;
+                }
+                button{
+                    @include push();
+                }
+                button:hover{
+                    color: $basic-color;
+                    background-color: $accent-color;
+                }
+            }
+        }
+        .social-media{
+            @include social-media-icons(50px, 50px);
+            padding: $spacing;
         }
     }
 }
 
+footer:before{
+    // .myDiv:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url(test.jpg) center center;
+        opacity: .4;
+    // }
+}
 
 @media only screen and (min-width: 768px){
     * {
-        box-sizing: border-box
+        box-sizing: border-box;
     }
-// body {font-family: "Lato", sans-serif;}
+    // // body {font-family: "Lato", sans-serif;}
 
-/* Style the tab */
-.tab {
-  float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  width: 30%;
-  height: 300px;
-}
+    // /* Style the tab */
+    // .tab {
+    // float: left;
+    // border: 1px solid #ccc;
+    // background-color: #f1f1f1;
+    // width: 30%;
+    // height: 300px;
+    // }
 
-/* Style the buttons inside the tab */
-.tab button {
-  display: block;
-  background-color: inherit;
-  color: black;
-  padding: 22px 16px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  cursor: pointer;
-  font-size: 17px;
-}
+    // /* Style the buttons inside the tab */
+    // .tab button {
+    // display: block;
+    // background-color: inherit;
+    // color: black;
+    // padding: 22px 16px;
+    // width: 100%;
+    // border: none;
+    // outline: none;
+    // text-align: left;
+    // cursor: pointer;
+    // font-size: 17px;
+    // }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+    // /* Change background color of buttons on hover */
+    // .tab button:hover {
+    // background-color: #ddd;
+    // }
 
-/* Create an active/current "tab button" class */
-.tab button.active {
-  background-color: #ccc;
-}
+    // /* Create an active/current "tab button" class */
+    // .tab button.active {
+    // background-color: #ccc;
+    // }
 
-/* Style the tab content */
-.tabcontent {
-  float: left;
-  padding: 0px 12px;
-  border: 1px solid #ccc;
-  width: 70%;
-  border-left: none;
-  height: 300px;
-  display: none;
-}
+    // /* Style the tab content */
+    // .tabcontent {
+    // float: left;
+    // padding: 0px 12px;
+    // border: 1px solid #ccc;
+    // width: 70%;
+    // border-left: none;
+    // height: 300px;
+    // display: none;
+    // }
 
-/* Clear floats after the tab */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    // /* Clear floats after the tab */
+    // .clearfix::after {
+    // content: "";
+    // clear: both;
+    // display: table;
+    // }
     
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        display: inline-block;
+        // width: 100%;
+        display: grid;
+        grid-template-areas: 
+        "landing"
+        "nav"
+        "main"
+        "ancillary"
+        "footer";
+        div.top-container{
+            grid-area: landing;
+            height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+            height: calc(var(--vh, 1vh) * 100);        }
+        #header{
+            grid-area: nav;
+        }
+        main{
+            grid-area: main;
+        }
+        aside{
+            grid-area: ancillary;
+            .panel-section, .subscribe{
+                display: none;
+
+            }
+            .s-about{
+                .social-media{
+                    display: none;
+                }
+            }
+        }
+        footer{
+            @include basic-image();
+        }
+
+        main{
+            // width: 100vw;s
+
+        }
+    }
+
+} 
+
