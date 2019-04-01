@@ -229,8 +229,6 @@ $afriga: 'afriga';
 }
 
 
-
-
 @mixin links($link, $visit, $hover, $active){
     a{
         background-color: $link;
@@ -334,6 +332,56 @@ $afriga: 'afriga';
     }
 }
 
+
+@mixin vertical-nav-bar(){
+    nav{
+        // z-index: 200;
+        font-family: $title-font;
+        // font-size: 3em;
+        // text-shadow: $t-shadow-nav;
+        // background-color: $dark-color;
+        text-align: center;
+        font-family: $secondary-font;
+        height: 100%;
+        padding: 10px;
+        ul{
+            list-style-type: none;
+            display: inline;
+            li{
+                display: inline-block;
+                border-radius: 7px;
+                a:hover{
+                    cursor: alias;
+                }           
+            }
+            // li:nth-child(odd){
+            //     font-size:30px;
+            //     vertical-align: 20%;
+            // }
+            #news:hover{
+                @include transition();
+                cursor: not-allowed;
+                background-color: gray;
+                a{
+                    color: $accent-color;
+                    padding: 5px 5px;
+                }
+            } 
+            li:hover{
+                background-color: $green-color;
+                a{
+                    @include transition();
+                    color: $basic-color;
+                    padding: 5px 5px;
+                }
+            }
+            li a{
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
 // /* ______________________________ SPECIFICS ______________________________ */
 
 *{
@@ -439,8 +487,11 @@ input[type=email]:hover, input[type=text]:hover, input[placeholder="email addres
 
 
 body{
+    width: 100vw;
     background-color: $dark-color;
     .body-container{
+        // display: inline-block;
+
         // display: grid;
     //     grid-template-areas: 
     //         "land land land land land land"
@@ -452,26 +503,59 @@ body{
 
 
 .top-container{
-    grid-area: land;
-    height: 100vh;
-    width: 100%;
-    background-color: $accent-color;
-    // background-image: url(./assets/images/women/wise_woman.jpg);
-    @include basic-image();
-    background-color: $accent-color;
-
-    margin: 10px solid rgba(0, 0, 0, 0.3); 
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-transform: uppercase;
-    .landing{
-        @include text-container();
-        h1{
-            font-family: $secondary-font;
-            font-size: 8vw;
+        grid-area: land;
+        height: 100vh;
+        width: 100%;
+        background-color: $accent-color;
+        // background-image: url(./assets/images/women/wise_woman.jpg);
+        @include basic-image();
+        background-color: $accent-color;
+    
+        margin: 10px solid rgba(0, 0, 0, 0.3); 
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        text-transform: uppercase;
+    #nav-container{
+        padding-top: $spacing;
+        background-color: $accent-color;
+        .hamburger-vert-menu{
+            // display: inline-block;
+            .container{
+                // display: inline-block;
+            }
+            @include vertical-nav-bar();
+            nav{
+                display: inline-block;
+                vertical-align: top;
+                width: 85%;
+                ul{
+                    // display: inline-block;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    justify-content: space-evenly;
+                    li{
+                        font-size: 30px;
+                        a{
+                            text-transform: lowercase;
+    
+                        }
+                    }
+                    display: none;
+                    //when the hamburger button is cikced, have the ul display property set to inline-block as well as the aforementioned positions
+                }
+    
+            }
+        }
+        .landing{
+            @include text-container();
+            h1{
+                font-family: $secondary-font;
+                font-size: 8vw;
+            }
         }
     }
+    
 }
 
 
@@ -488,51 +572,52 @@ header{
     //     // text-shadow: 5px 5px 10px black;
     //     text-align: center;
     // }
+    @include vertical-nav-bar();
     nav{
         // z-index: 200;
-        font-family: $title-font;
+        // font-family: $title-font;
         font-size: 3em;
         text-shadow: $t-shadow-nav;
         background-color: $dark-color;
-        text-align: center;
-        font-family: $secondary-font;
-        height: 100%;
-        padding: 10px;
+        // text-align: center;
+        // font-family: $secondary-font;
+        // height: 100%;
+        // padding: 10px;
         ul{
-            list-style-type: none;
-            display: inline;
-            li{
-                display: inline-block;
-                border-radius: 7px;
-                a:hover{
-                    cursor: alias;
-                }           
-            }
+        //     list-style-type: none;
+        //     display: inline;
+        //     li{
+        //         display: inline-block;
+        //         border-radius: 7px;
+        //         a:hover{
+        //             cursor: alias;
+        //         }           
+        //     }
             li:nth-child(odd){
                 font-size:30px;
                 vertical-align: 20%;
             }
-            #news:hover{
-                @include transition();
-                cursor: not-allowed;
-                background-color: gray;
-                a{
-                    color: $accent-color;
-                    padding: 5px 5px;
-                }
-            } 
-            li:hover{
-                background-color: $green-color;
-                a{
-                    @include transition();
-                    color: $basic-color;
-                    padding: 5px 5px;
-                }
-            }
-            li a{
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        //     #news:hover{
+        //         @include transition();
+        //         cursor: not-allowed;
+        //         background-color: gray;
+        //         a{
+        //             color: $accent-color;
+        //             padding: 5px 5px;
+        //         }
+        //     } 
+        //     li:hover{
+        //         background-color: $green-color;
+        //         a{
+        //             @include transition();
+        //             color: $basic-color;
+        //             padding: 5px 5px;
+        //         }
+        //     }
+        //     li a{
+        //         text-decoration: none;
+        //         text-transform: uppercase;
+        //     }
         }
     }
 }
@@ -725,7 +810,7 @@ aside{
 }
 
 .sticky + .content{
-    padding-top: 102px;
+    padding-top: 2px;
 }
 
 
@@ -927,7 +1012,7 @@ footer:before{
 @media only screen and (max-width: 600px) {
     body{
         display: inline-block;
-        // width: 100%;
+        width: 100%;
         display: grid;
         grid-template-areas: 
         "landing"

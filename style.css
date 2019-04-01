@@ -129,6 +129,7 @@ input[type=email]:hover, input[type=text]:hover, input[placeholder="email addres
   transform: rotate(45deg) translate(-8px, -8px); }
 
 body {
+  width: 100vw;
   background-color: #85114c; }
 
 .top-container {
@@ -147,19 +148,71 @@ body {
   justify-content: center;
   align-content: center;
   text-transform: uppercase; }
-  .top-container .landing {
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Center the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    padding: 20px;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 100;
-    margin: 0 auto; }
-    .top-container .landing h1 {
+  .top-container #nav-container {
+    padding-top: 20px;
+    background-color: #CD8B13; }
+    .top-container #nav-container .hamburger-vert-menu nav {
+      font-family: "rasby";
+      text-align: center;
       font-family: "Josefin Sans", sans-serif;
-      font-size: 8vw; }
+      height: 100%;
+      padding: 10px; }
+      .top-container #nav-container .hamburger-vert-menu nav ul {
+        list-style-type: none;
+        display: inline; }
+        .top-container #nav-container .hamburger-vert-menu nav ul li {
+          display: inline-block;
+          border-radius: 7px; }
+          .top-container #nav-container .hamburger-vert-menu nav ul li a:hover {
+            cursor: alias; }
+        .top-container #nav-container .hamburger-vert-menu nav ul #news:hover {
+          -webkit-transition: 0.30s;
+          -moz-transition: 0.30s;
+          -ms-transition: 0.30s;
+          -o-transition: 0.30s;
+          cursor: not-allowed;
+          background-color: gray; }
+          .top-container #nav-container .hamburger-vert-menu nav ul #news:hover a {
+            color: #CD8B13;
+            padding: 5px 5px; }
+        .top-container #nav-container .hamburger-vert-menu nav ul li:hover {
+          background-color: #8E8C10; }
+          .top-container #nav-container .hamburger-vert-menu nav ul li:hover a {
+            -webkit-transition: 0.30s;
+            -moz-transition: 0.30s;
+            -ms-transition: 0.30s;
+            -o-transition: 0.30s;
+            color: #F9F6F1;
+            padding: 5px 5px; }
+        .top-container #nav-container .hamburger-vert-menu nav ul li a {
+          text-decoration: none;
+          text-transform: uppercase; }
+    .top-container #nav-container .hamburger-vert-menu nav {
+      display: inline-block;
+      vertical-align: top;
+      width: 85%; }
+      .top-container #nav-container .hamburger-vert-menu nav ul {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+        display: none; }
+        .top-container #nav-container .hamburger-vert-menu nav ul li {
+          font-size: 30px; }
+          .top-container #nav-container .hamburger-vert-menu nav ul li a {
+            text-transform: lowercase; }
+    .top-container #nav-container .landing {
+      background-repeat: no-repeat;
+      background-position: center;
+      /* Center the image */
+      background-size: cover;
+      /* Resize the background image to cover the entire container */
+      padding: 20px;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 100;
+      margin: 0 auto; }
+      .top-container #nav-container .landing h1 {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 8vw; }
 
 header {
   grid-area: bar;
@@ -170,9 +223,6 @@ header {
   box-shadow: 0px 2px 200 px -1px #333; }
   header nav {
     font-family: "rasby";
-    font-size: 3em;
-    text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 14px 2px rgba(0, 0, 0, 0.1), 0px 14px 30px rgba(0, 0, 0, 0.1);
-    background-color: #85114c;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     height: 100%;
@@ -185,9 +235,6 @@ header {
         border-radius: 7px; }
         header nav ul li a:hover {
           cursor: alias; }
-      header nav ul li:nth-child(odd) {
-        font-size: 30px;
-        vertical-align: 20%; }
       header nav ul #news:hover {
         -webkit-transition: 0.30s;
         -moz-transition: 0.30s;
@@ -210,6 +257,13 @@ header {
       header nav ul li a {
         text-decoration: none;
         text-transform: uppercase; }
+  header nav {
+    font-size: 3em;
+    text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 14px 2px rgba(0, 0, 0, 0.1), 0px 14px 30px rgba(0, 0, 0, 0.1);
+    background-color: #85114c; }
+    header nav ul li:nth-child(odd) {
+      font-size: 30px;
+      vertical-align: 20%; }
 
 main {
   grid-area: main;
@@ -365,7 +419,7 @@ aside {
   width: 100%; }
 
 .sticky + .content {
-  padding-top: 102px; }
+  padding-top: 2px; }
 
 .circle {
   float: right;
@@ -614,6 +668,7 @@ footer:before {
 @media only screen and (max-width: 600px) {
   body {
     display: inline-block;
+    width: 100%;
     display: grid;
     grid-template-areas: "landing" "nav" "main" "ancillary" "footer"; }
     body div.top-container {

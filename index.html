@@ -61,43 +61,54 @@
 
 
     <!-- JAVASCRIPT -->
-    <script src="./assets/js/app.js"></script>
-    <!-- STYLES -->
-    <link rel="stylesheet" href="rasby/rasby.ttf">
+    <script src="./assets/js/app.js" async></script>
     <!-- FONT -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Arizonia|Josefin+Sans:100,300,400|Poiret+One" rel="stylesheet">
     <!-- ANIMATE.CSS -->
-    <link rel="stylesheet" href="animate.min.css">
+    <!-- <link rel="stylesheet" href="animate.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!-- <title>Sagacious Dictations</title> -->
 </head>
 <body>
     <div class="body-container">
         <div class="top-container">
-            <div class="container" onclick="myFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <div class="landing">
-                <h1>Sagacious</h1>
-                <h1>Dictations</h1>
-                <p>the source for proven, researched ideas and thoughts to create change for a better outcome</p>
+            <div id="nav-container">
+                <div class="hamburger-vert-menu" onclick="showVerticalNav()">
+                    <div href="javascript:void(0);" class="container" onclick="myFunction(this)" >
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <nav>
+                        <ul id="showNav">
+                        <a href="./about.html">About</a>
+                        <a href="./single.html">Profile</a>
+                            <!-- <li id="news" onclick="comingSoon()"> -->
+                            <a href="https://www.npr.org/">News</a>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="landing">
+                    <h1>Sagacious</h1>
+                    <h1>Dictations</h1>
+                    <p>the source for proven, researched ideas and thoughts to create change for a better outcome</p>
+                </div>
             </div>
             <!-- TODO:arrow bouncing down -->
             <a href=""></a>
 
-            </div>
         </div>
         <header id="header">
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li><a href="./about.html">About</a></li>
-                    <li><a href="./single.html">Blog</a></li>
+                    <li><a href="./single.html">Profile</a></li>
                     <li id="news" onclick="comingSoon()"><a href="https://www.npr.org/">News</a></li>
                 </ul>
-            </nav>
+            </nav> -->
         </header>
         <div class="content-container">
             <aside class="col-8">
@@ -236,7 +247,7 @@
                     <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmsinvincible.tk%2Fsagaciousdictations
                         "><i style="font-size:48px;" class="fab">&#xf082;</i></a>
                     <a href=
-                    "sms:?&body=Check%&20out%&20this%&20new%&20blog!%&20It's%&20informative%&20and%&20thought%&20provoking.%&20msinvincible.tk/sagaciousdictations" 
+                    "sms:?&body=%&20out%&20this%&20new%&20blog!%&20It's%&20informative%&20and%&20thought%&20provoking.%&20msinvincible.tk/sagaciousdictations" 
                     title="Checkout this site"
                     > 
                     <i style="font-size:48px;" class="fa">&#xf1e1;</i></a>  
