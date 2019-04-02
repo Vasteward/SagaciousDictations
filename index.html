@@ -15,8 +15,8 @@
   <!--  Added for javascript highlighting in the navbar  -->
     <meta name="page-title" content="Home">
   <!--   Adds color to the overall window -->
-    <meta name="theme-color" content="#CC8B14">
-
+    <!-- <meta name="theme-color" content="#CC8B14"> -->
+    <meta name="theme-color" content="#85114c">
 
   <!-- OPEN GRAPH -->
   <!-- Note: can change for each page; ideally for each post; make this dynamic -->
@@ -82,22 +82,23 @@
                     </div>
                     <nav>
                         <ul id="showNav">
-                        <a href="./about.html">About</a>
-                        <a href="./single.html">Profile</a>
+                            <a href="./about.html">About</a>
+                            <a href="./single.html">Profile</a>
                             <!-- <li id="news" onclick="comingSoon()"> -->
-                            <a href="https://www.npr.org/">News</a>
+                            <a href="https://www.npr.org/" onclick="comingSoon()">News</a>
                         </ul>
                     </nav>
                 </div>
 
 
-                <div class="landing">
+                <div id="title" class="landing">
                     <h1>Sagacious</h1>
                     <h1>Dictations</h1>
                     <p>the source for proven, researched ideas and thoughts to create change for a better outcome</p>
                 </div>
             </div>
             <!-- TODO:arrow bouncing down -->
+            <!-- TODO modal popup for creating a new user/logging in with jquery (http://jqueryui.com/dialog/#modal-form)-->
             <a href=""></a>
 
         </div>
@@ -256,61 +257,12 @@
         </footer>
     </div>
     <script>
-        //When the user scrolls the page execute scroll()
-
-    window.onscroll = function(){
-        scroll()
-    };
-
-    // Get the header
-    var header = document.getElementById("header");
-    var blogTitle = document.getElementsByClassName("blog-title");
-    // Get the offset postion of the navaar
-    var sticky = header.offsetTop;
-
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-
-    function scroll(){
-        if(window.pageYOffset > sticky){
-            header.classList.add("sticky");
-            // blogTitle.classList.add("sticky");
-        }else{
-            header.classList.remove("sticky");
-            // blogTitle.remove("sticky");
-
-        }
-    }
-    function myFunction(x) {
-  x.classList.toggle("change");
-}
-    // var link = document.getElementsByClassName("animated");
-    // // link.addEvent
-    // link.onmouseover = function(){
-    //     mouseover()};
-    // link.onmouseout = function(){
-    //     mouseout()};
-
-    // function mouseover(){
-    //     link.classList.add("pulse")};
-    // function mouseout(){
-    //     link.classList.remove("pulse")};
-
-    //     document.getElementById("demo").onmouseover = function() {mouseOver()};
-    //     document.getElementById("demo").onmouseout = function() {mouseOut()};
-
-    //     function mouseOver() {
-    //     document.getElementById("demo").style.color = "red";
-    //     }
-
-    //     function mouseOut() {
-    //     document.getElementById("demo").style.color = "black";
-    //     }
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     function comingSoon(){
-        alert("Thanks for visiting my site. Soon you'll be able to get all of your news right here. In the meantime, you'll be redirected to NPR(a trusted news source with thought provoking topics");
+        alert("Thanks for visiting Sagacious Dictations. Soon you'll be able to get all of your news right here. In the meantime, you'll be redirected to NPR(a trusted news source with thought provoking topics)");
         // var message =             
         // confirm("Thanks for visiting my site. Soon you'll be able to get all of your news right here. In the meantime, you'll be redirected to NPR(a trusted news source with thought provoking topics\nPress Cancel to return\n Press OK to proceed");
 

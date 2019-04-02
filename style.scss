@@ -411,19 +411,19 @@ $afriga: 'afriga';
 
     // STYLES THE INPUT TEXT
 input::-webkit-input-placeholder:hover {
-    color: $basic-color !important;
+    color: $basic-color;
 }
         
 input:-moz-placeholder:hover { /* Firefox 18- */
-    color: $basic-color !important;  
+    color: $basic-color;  
 }
         
 input::-moz-placeholder:hover {  /* Firefox 19+ */
-    color: $basic-color !important;  
+    color: $basic-color;  
 }
         
 input:-ms-input-placeholder:hover {  
-    color: $basic-color !important;  
+    color: $basic-color;  
 }
 
 img{
@@ -534,12 +534,12 @@ body{
                     display: grid;
                     grid-template-columns: auto auto auto;
                     justify-content: space-evenly;
-                    li{
-                        font-size: 30px;
+                    // li{
+                    //     font-size: 30px;
                         a{
                             text-transform: lowercase;
     
-                        }
+                        // }
                     }
                     display: none;
                     //when the hamburger button is cikced, have the ul display property set to inline-block as well as the aforementioned positions
@@ -856,7 +856,7 @@ aside{
 #profile-pic{
     // @include basic-image();
     // @include box-shadow(0px, 2px, 2px, -1px, #333);
-    z-index: -100;
+    // z-index: -100;
 }
 #cortez, #representative, #children, #profile-pic, .full{
     @include image-spec();
@@ -930,6 +930,24 @@ footer{
         
     }
 }
+
+
+
+// div.title{
+//     text-align: center;
+//     background-color: blue;
+//     h1{
+//         font-size: 1em;
+//         display: inline-block;
+//         text-align: end;
+//     }
+//     p{
+//         font-size: .5em;
+//         display: inline-block;
+//         width: 50%; 
+//         text-align: start;
+//     }
+// }
 
 footer:before{
         content: "";
@@ -1009,6 +1027,7 @@ footer:before{
     }
 } 
 
+//mobile
 @media only screen and (max-width: 600px) {
     body{
         display: inline-block;

@@ -58,18 +58,18 @@
   background: #b2a98f; }
 
 input::-webkit-input-placeholder:hover {
-  color: #F9F6F1 !important; }
+  color: #F9F6F1; }
 
 input:-moz-placeholder:hover {
   /* Firefox 18- */
-  color: #F9F6F1 !important; }
+  color: #F9F6F1; }
 
 input::-moz-placeholder:hover {
   /* Firefox 19+ */
-  color: #F9F6F1 !important; }
+  color: #F9F6F1; }
 
 input:-ms-input-placeholder:hover {
-  color: #F9F6F1 !important; }
+  color: #F9F6F1; }
 
 img {
   background-repeat: no-repeat;
@@ -196,10 +196,8 @@ body {
         grid-template-columns: auto auto auto;
         justify-content: space-evenly;
         display: none; }
-        .top-container #nav-container .hamburger-vert-menu nav ul li {
-          font-size: 30px; }
-          .top-container #nav-container .hamburger-vert-menu nav ul li a {
-            text-transform: lowercase; }
+        .top-container #nav-container .hamburger-vert-menu nav ul a {
+          text-transform: lowercase; }
     .top-container #nav-container .landing {
       background-repeat: no-repeat;
       background-position: center;
@@ -471,9 +469,6 @@ aside {
   background-size: cover;
   /* Resize the background image to cover the entire container */
   z-index: -1; }
-
-#profile-pic {
-  z-index: -100; }
 
 #cortez, #representative, #children, #profile-pic, .full {
   height: 30vw;
