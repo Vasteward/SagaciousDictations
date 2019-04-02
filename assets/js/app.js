@@ -50,7 +50,7 @@ window.onscroll = function(){
   stickTop();
   scroll();
   // shrinkTitle();
-  // mediaChange(desktop_query);
+  // mediaChange(mobile_query);
 
 };
 
@@ -76,6 +76,7 @@ var t = "all .5s";
 function stickTop(){
   firstTitle.style.transition = t;
   secondTitle.style.transition = t;
+  //Window is offset
   if (window.pageYOffset > sticky ) {
     header.classList.add("sticky");
     navBar.style.display = 'none';
@@ -83,8 +84,10 @@ function stickTop(){
       pgTitle[i].style.fontSize= "10px";
       pgTitle[i].style.color= "#85114c";
     }
-    if(desktop_query.matches){
+    //to start
+    if(mobile_query.matches){
       firstTitle.style.fontSize = "2em";
+      secondTitle.style.fontSize = "2em";
       textTitle.style.width = "100%";
       firstTitle.style.display = "block";
       secondTitle.style.display = "block";
@@ -100,23 +103,24 @@ function stickTop(){
 
     }
   } else {
+    //Window is back to normal
     header.classList.remove("sticky");
     for(var i = 0; i < len; i++){
       pgTitle[i].style.fontSize = "";
       pgTitle[i].style.color= "black";
     }
-    if(desktop_query.matches){
+    if(mobile_query.matches){
       // pgTitle[0].style.textAlign = "center";
       firstTitle.fontSize = "20px";
       secondTitle.style.fontSize = "20px";
-      textTitle.style.width = "50%";
+      // textTitle.style.width = "50%";
       // firstTitle.style.display = "inline-block";
       // secondTitle.style.display = "inline-block";
       textTitle.style.display = "inline-block";
 
     }else{
-      firstTitle.style.fontSize = "8vw";
-      secondTitle.style.fontSize = "8vw";
+      firstTitle.style.fontSize = "2em";
+      firstTitle.style.fontSize = "2em";
       textTitle.style.width = "100%"; 
       firstTitle.style.display = "block";
       secondTitle.style.display = "block";
@@ -126,4 +130,13 @@ function stickTop(){
 
 
 
-var desktop_query = window.matchMedia("(max-width: 600px");
+var mobile_query = window.matchMedia("(max-width: 600px");
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+
+// let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+// document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// So, we told JS to grab the height of the viewport and then drilled it down into 1/100th of that total so we have a value to assign as our viewport height unit value. Then we politely asked JS to create the CSS variable (--vh) at the :root.
+

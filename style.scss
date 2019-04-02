@@ -1031,21 +1031,22 @@ footer:before{
 @media only screen and (max-width: 600px) {
     body{
         display: inline-block;
-        width: 100%;
+        // width: 100vw;
         display: grid;
         grid-template-areas: 
         "landing"
-        "nav"
+        // "nav"
         "main"
         "ancillary"
         "footer";
         div.top-container{
             grid-area: landing;
             height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-            height: calc(var(--vh, 1vh) * 100);        }
-        #header{
-            grid-area: nav;
+            // height: calc(var(--vh, 1vh) * 100);
         }
+        // #header{
+        //     grid-area: nav;
+        // }
         main{
             grid-area: main;
         }
@@ -1061,6 +1062,9 @@ footer:before{
                     display: none;
                 }
             }
+        }
+        footer .footer-bg .footer-text h3 {
+            font-size: 30px;
         }
         footer{
             @include basic-image();

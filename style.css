@@ -663,16 +663,12 @@ footer:before {
 @media only screen and (max-width: 600px) {
   body {
     display: inline-block;
-    width: 100%;
     display: grid;
-    grid-template-areas: "landing" "nav" "main" "ancillary" "footer"; }
+    grid-template-areas: "landing" "main" "ancillary" "footer"; }
     body div.top-container {
       grid-area: landing;
       height: 100vh;
-      /* Fallback for browsers that do not support Custom Properties */
-      height: calc(var(--vh, 1vh) * 100); }
-    body #header {
-      grid-area: nav; }
+      /* Fallback for browsers that do not support Custom Properties */ }
     body main {
       grid-area: main; }
     body aside {
@@ -681,6 +677,8 @@ footer:before {
         display: none; }
       body aside .s-about .social-media {
         display: none; }
+    body footer .footer-bg .footer-text h3 {
+      font-size: 30px; }
     body footer {
       background-repeat: no-repeat;
       background-position: center;
